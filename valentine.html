@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Valentine Surprise</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+            background-color: #ffe6f0;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        h1 {
+            color: #d63384;
+            margin-top: 100px;
+        }
+
+        button {
+            padding: 12px 25px;
+            font-size: 18px;
+            margin: 15px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            position: relative;
+        }
+
+        #yesBtn {
+            background-color: #ff4d6d;
+            color: white;
+        }
+
+        #noBtn {
+            background-color: #6c757d;
+            color: white;
+            position: absolute;
+        }
+
+        #response {
+            margin-top: 30px;
+            font-size: 24px;
+            color: #b30059;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Will you be my Valentine, Teja? ❤️</h1>
+
+    <button id="yesBtn" onclick="sayYes()">Yes 💖</button>
+    <button id="noBtn">No 😢</button>
+
+    <div id="response"></div>
+
+    <script>
+        const noBtn = document.getElementById("noBtn");
+
+        noBtn.addEventListener("mouseover", function() {
+            const x = Math.random() * (window.innerWidth - noBtn.offsetWidth);
+            const y = Math.random() * (window.innerHeight - noBtn.offsetHeight);
+            noBtn.style.left = x + "px";
+            noBtn.style.top = y + "px";
+        });
+
+        function sayYes() {
+            document.getElementById("response").innerHTML =
+                "Yayyyy!!! 💕 I love you so much Teja! Happy Valentine's Day! 💖🌹";
+        }
+    </script>
+
+</body>
+</html>
